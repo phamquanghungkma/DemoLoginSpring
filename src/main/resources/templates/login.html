@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login Page</title>
+    <Style>
+        input{
+            margin:10px 0px;
+        }
+    </Style>
+
+
+</head>
+<body>
+<nav class = "navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class = container-fluid>
+        <a class="navbar-branch" href="#">
+           <img th:src="@{/images/logo.png}" th:height="50"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive">
+            <span class ="navbar-toggler-icon"></span>
+
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class ="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class ="nav-link" href="#">Service</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class ="nav-link" href="#">Team</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class ="nav-link" href="#">Connect</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+</nav>
+<div class="container" style="text-align: center ">
+    <p th:if="${param.error}" class="error">Invalid email or password</p>
+    <p th:if="${param.logout}" class="success">You have been logged out</p>
+
+    <h3>Login to continue</h3>
+
+    <form class="form-signin" th:action="@{/login}" method="POST" style="max-width: 450px; margin: auto"  >
+        <input class="form-control" type="text" name="email" placeholder="Input Your email" />
+        <input class="form-control"type="password" name="password" placeholder="Input Your password" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button> <br />
+    </form>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
